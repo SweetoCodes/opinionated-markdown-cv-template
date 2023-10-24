@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Charis SIL";
+  src: url("https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Charis SIL";
+  font-size: 12px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  /* line-height: 14px; */
+}
+
+h3 {
+  /* font-family: "Bitstream Charter"; */
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  /* line-height: 15.4px; */
+}
+hr {
+  border: none;
+  height: 1px;
+  color: #333;
+  background-color: #333;
+  padding: 0;
+  margin: 0;
+}
+div {
+  padding: 0;
+  margin: 0;
+}
+b {
+  font-weight: bold;
+}
+i {
+  font-style: italic;
+}
+.line-break {
+  margin-top: 8px;
+}
+.justified-row {
+  display: flex;
+  justify-content: space-between;
+}
+.section-header {
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  text-decoration: underline;
+}
