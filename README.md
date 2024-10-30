@@ -1,12 +1,16 @@
 ## Installation
+By default, changes to the markdown file in this repository trigger a github action that builds a pdf from the markdown source and commits the file. 
+
+To enable the comitting of this file back to this repository click on Settings > Actions > General and (under workflow permissions) select "Read and write permissions" & "Allow GitHub Actions to create and approve pull requests".
 
 ```bash
-# Run Locally
-# Install mdpdf glboally
+# or run locally:
+
+# Install mdpdf globally
 npm install -g mdpdf@3.0.1
 
 # Build pdf from markdown locally
-mdpdf cv.md --style=styles.css --border-top=12mm --border-bottom=1mm --border-left=4mm --border-right=4mm
+mdpdf cv.md --style=styles.css --border-top=12mm --border-bottom=0mm --border-left=4mm --border-right=4mm
 ```
 
 ### About

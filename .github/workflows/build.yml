@@ -1,0 +1,36 @@
+name: Generate PDF from Markdown
+
+on:
+  push:
+    paths:
+      - '**/*.md'   # Trigger this workflow on Markdown file changes
+  workflow_dispatch: # Allows manual trigger of the action
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install mdpdf
+      run: npm install -g mdpdf
+
+    - name: Generate PDF
+      run: mdpdf cv.md --style=styles.css --border-top=12mm --border-bottom=0mm --border-left=4mm --border-right=4mm
+
+    - name: Commit and push PDF
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add cv.pdf
+        git commit -m 'Generate PDF from Markdown'
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
